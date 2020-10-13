@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 15rem;
+    width: 100%;
+    height: auto;
+}
+
+#record-svg {
+    fill: #D0D0D0;
+    &:hover {
+        #arm-top {
+            animation: 1s forwards rotate-arm;
+        }
+        #record-container {
+            animation: 2s linear 250ms infinite rotate-container;
+        }
+        #record {
+            animation: 750ms linear 1.25s infinite rotate-record;
+        }
+    }
+}
+
+#arm-top {
+    transform-origin: 0px 12px;
+    transform: translate(9.5px, 3px) rotate(-90deg);
+    animation: 250ms linear reverse rotate-arm-reverse;
+}
+
+#record-container {
+    transform-origin: 24px 24px;
+    transform: translate(7px, 0) rotate(0deg);
+}
+
+#record {
+    transform-origin: 24px 24px;
+    transform: rotate(0deg);
+    animation: 500ms linear rotate-record-reverse;
+}
+
+@keyframes rotate-arm {
+    to {
+        transform: translate(9.5px, 3px) rotate(0deg);
+    }
+}
+
+@keyframes rotate-arm-reverse {
+    to {
+        transform: translate(9.5px, 3px) rotate(0deg);
+    }
+}
+
+@keyframes rotate-container {
+    to {
+        transform: translate(7px, 0) rotate(360deg);
+    }
+}
+
+@keyframes rotate-record {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-record-reverse {
+    to {
+        transform: rotate(-360deg);
+    }
+}
